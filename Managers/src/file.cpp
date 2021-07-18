@@ -6,6 +6,8 @@
 //
 
 #include "file.hpp"
+#include "lang.hpp"
+
 namespace file{
 
 int read(const std::string & filename, Json::Value & json){
@@ -15,7 +17,7 @@ int read(const std::string & filename, Json::Value & json){
     assert(file.is_open());
     
     if (!reader.parse(file, json)){
-        std::cout << "[Error] Reader parse failed.";
+        logger::error("Reader " + filename + " parse failed.");
         file.close();
         return -1;
     }
@@ -26,7 +28,7 @@ int read(const std::string & filename, Json::Value & json){
 int save(const std::string & filename, Json::Value & json){
 //    Json::FastWriter writer;
     Json::StreamWriterBuilder wbuilder;
-//    wbuilder["indentation"] = "\t";
+    wbuilder["indentation"] = "    ";
     std::ofstream file;
     file.open(filename);
     assert(file.is_open());

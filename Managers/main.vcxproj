@@ -21,14 +21,20 @@
   <ItemGroup>
     <ClCompile Include="include\jsoncpp.cpp" />
     <ClCompile Include="src\file.cpp" />
+    <ClCompile Include="src\lang.cpp" />
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\manager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="data\config.json" />
     <None Include="data\data.json" />
-    <None Include="data\template.json" />
+    <None Include="data\lang.json" />
+    <None Include="data\system.json" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\file.hpp" />
+    <ClInclude Include="src\lang.hpp" />
+    <ClInclude Include="src\manager.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -158,7 +164,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties />
+      <UserProperties data_4system_1json__JsonSchema="" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

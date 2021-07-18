@@ -1,0 +1,45 @@
+{
+    "Student Info":{
+        "Datas":[
+            {"key": "ID", "type": "int"},
+            {"key": "name", "type": "string"},
+            {"key": "sex", "type": "string"},
+            {"key": "birth", "type": "string"},
+            {"key": "chinese", "type": "double"},
+            {"key": "math", "type": "double"},
+            {"key": "english", "type": "double"},
+            {"key": "science", "type": "double"},
+            {"key": "pe", "type": "double"}
+        ],
+        "Method":[
+            "Add",
+            "Del",
+            "Modify",
+            "Search",
+            "Display"
+        ],
+        "Searchable keys":[
+            "name",
+            "ID"
+        ],
+        "Display keys": [
+            "name",
+            "ID"
+        ]
+    },
+    "Book":{
+
+    },
+    "Address Book":{
+
+    },
+    "Staff":{
+
+    },
+    "Device":{
+
+    },
+    "Flight":{
+
+    }
+}

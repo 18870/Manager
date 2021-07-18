@@ -1,0 +1,33 @@
+{
+    "en_us" : 
+    {
+        "ID" : "student ID",
+        "birth" : "birthday",
+        "chinese" : "Chinese score",
+        "english" : "English score",
+        "math" : "math score",
+        "name" : "name",
+        "pe" : "P.E. score",
+        "science" : "Science score",
+        "sex" : "sexual"
+    },
+    "zh_cn" : 
+    {
+        "ID" : "学号",
+        "birth" : "出生日期",
+        "chinese" : "语文分数",
+        "english" : "英语分数",
+        "math" : "数学分数",
+        "name" : "姓名",
+        "pe" : "体育分数",
+        "science" : "科学分数",
+        "sex" : "性别",
+        "manager.add": "新增",
+        "manager.del": "删除",
+        "quit": "退出",
+        "nextpage": "下一页",
+        "prevpage": "上一页",
+        "manager.modify.hint": "选择需要修改的项目",
+        "manager.modify.newvalue": "输入新的值"
+    }
+}

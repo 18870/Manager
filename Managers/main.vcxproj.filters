@@ -24,17 +24,35 @@
     <ClCompile Include="src\file.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\manager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\lang.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\data.json">
       <Filter>资源文件</Filter>
     </None>
-    <None Include="data\template.json">
+    <None Include="data\system.json">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="data\config.json">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="data\lang.json">
       <Filter>资源文件</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\file.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\manager.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\lang.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
