@@ -1,0 +1,30 @@
+[
+	{
+		"birthday" : "2002/06/24",
+		"name" : "stu1",
+		"number" : 2001630318,
+		"score" : 
+		{
+			"Chinese" : 56,
+			"English" : 127,
+			"Math" : 126,
+			"P.E." : 99,
+			"Science" : 118
+		},
+		"sex" : "male"
+	},
+	{
+		"birthday" : "2002/03/24",
+		"name" : "stu2",
+		"number" : 2001630319,
+		"score" : 
+		{
+			"Chinese" : 96,
+			"English" : 117,
+			"Math" : 96,
+			"P.E." : 129,
+			"Science" : 88
+		},
+		"sex" : "female"
+	}
+]
