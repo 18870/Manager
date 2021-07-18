@@ -22,7 +22,7 @@ namespace lang {
 
 	string l(string& key) {
 		if (LANG[CONFIG["language"].asString()][key].isNull()) {
-			logger::warning("Key " + key + " not found.");
+			logger::warn("Key " + key + " not found.");
 			// Saving a Chinese character cause coding problem
 			// GBK sucks, PLEASE USE UTF-8
 
@@ -30,10 +30,11 @@ namespace lang {
 			//save();
 			return key;
 		}
-		if (LANG[CONFIG["language"].asString()][key].asString() == "") {
-			logger::warning("Key " + key + " is empty.");
-			return key;
-		}
+		// Disabled.
+		//if (LANG[CONFIG["language"].asString()][key].asString() == "") {
+		//	logger::warning("Key " + key + " is empty.");
+		//	return key;
+		//}
 		return LANG[CONFIG["language"].asString()][key].asString();
 	}
 	string l(const char* key) {
@@ -49,10 +50,10 @@ namespace logger {
 	void hr(const string& str){
 		cout << "<<<<<<<< " << str << " >>>>>>>>" << endl;
 	}
-	void warning(const char* c) {
+	void warn(const char* c) {
 		cout << "[Warning] " << c << endl;
 	}
-	void warning(const string& str) {
+	void warn(const string& str) {
 		cout << "[Warning] " << str << endl;
 	}
 	void error(const char* c) {

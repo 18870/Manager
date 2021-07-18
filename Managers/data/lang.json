@@ -1,5 +1,5 @@
 {
-    "en_us" : 
+    "en" : 
     {
         "ID" : "student ID",
         "birth" : "birthday",
@@ -9,7 +9,21 @@
         "name" : "name",
         "pe" : "P.E. score",
         "science" : "Science score",
-        "sex" : "sexual"
+        "sex" : "sexual",
+        "manager.add": "NEW",
+        "manager.del": "DELETE",
+        "quit": "Quit",
+        "nextpage": "Next Page",
+        "prevpage": "Prev. Page",
+        "manager.modify.hint": "Choose one to modify",
+        "manager.modify.newvalue": "Enter new value",
+        "manager.search": "SEARCH",
+        "manager.search.select_method": "Selete a method",
+        "manager.search.enter_key": "Enter the value",
+        "manager.search.notfound": "Nothing Found",
+        "manager.search.showdetail": "Show details",
+        "manager.search.total1": "",
+        "manager.search.total2": " result found"
     },
     "zh_cn" : 
     {
@@ -28,6 +42,13 @@
         "nextpage": "下一页",
         "prevpage": "上一页",
         "manager.modify.hint": "选择需要修改的项目",
-        "manager.modify.newvalue": "输入新的值"
+        "manager.modify.newvalue": "输入新的值",
+        "manager.search": "查找",
+        "manager.search.select_method": "查找方式",
+        "manager.search.enter_key": "输入查找的值",
+        "manager.search.notfound": "没有结果",
+        "manager.search.showdetail": "显示全部信息",
+        "manager.search.total1": "共找到 ",
+        "manager.search.total2": " 结果"
     }
 }

@@ -1,14 +1,27 @@
 #include <iostream>
-#include "json/json.h"
 #include "manager.hpp"
 
 using namespace std;
+using manager::Manager;
+
+void init() {
+
+}
 
 int main(){
-    //Json::Value root;
-    //file::read("./data/data.json", root);
-    //cout << root[0]["Chinese"].asInt() << endl;
-    //file::save("./data/data.json", root);
-    manager::Manager student("Student Info");
-    student.display();
+    init();
+    Manager student("Student Info");
+    //Manager book("Book");
+    Manager adbook("Address Book");
+    Manager staff("Staff");
+    Manager device("Device");
+    Manager flight("Flight");
+    Manager* manager;
+
+
+    manager = &student;
+    manager->search();
+    
 }
+
+

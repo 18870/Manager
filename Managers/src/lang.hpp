@@ -26,8 +26,8 @@ namespace lang {
 namespace logger {
 	void hr(const char* c);
 	void hr(const string& str);
-	void warning(const char* c);
-	void warning(const string& str);
+	void warn(const char* c);
+	void warn(const string& str);
 	void error(const char* c);
 	void error(const string& str);
 	void info(const char* c);

@@ -26,9 +26,12 @@ extern Value DATA;
 extern Value CONFIG;
 
 void mod(Value &, string & type, string & name);
-void disp(Value & data, Value & keys, int page = 1, bool showIndex = true);
+void disp(Value & data, Value & keys, int page = 1, bool showIndex=true);
+void disp_(Value & data, Value & keys, int index, bool showIndex=true);
 void page_navigate(Value & data, int page);
+string get_keytype(Value & data, string & keyname);
 void load_config(bool load=false);
+
 class Manager {
 	void read();
 	void save();

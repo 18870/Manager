@@ -51,6 +51,7 @@ void Manager::del(){
 		page_navigate(data, page);
 		cout << ">>> ";
 		cin >> action;
+		cin.get();
 		cout << endl;
 		switch (action) {
 		case -1: page += 1; break;
@@ -76,6 +77,7 @@ void Manager::modify(){
 		page_navigate(data, page);
 		cout << ">>> ";
 		cin >> action;
+		cin.get();
 		cout << endl;
 		switch (action) {
 		case -1: page += 1; break;
@@ -96,6 +98,7 @@ void Manager::modify(){
 				cout << "[0] " << l("quit") << endl;
 				cout << ">>> ";
 				cin >> action2;
+				cin.get();
 				cout << endl;
 				switch (action2) {
 				case 0: break;
@@ -115,10 +118,99 @@ void Manager::modify(){
 }
 
 void Manager::search(){
+	logger::hr(l("manager.search"));
+	read();
+	int method = -1;
+	while (method) {
+		cout << l("manager.search.select_method") << ": " << endl;
+		for (int i = 0;i < cfg["Searchable keys"].size();++i) {
+			string method_;
+			cout << "[" << i + 1 << "] ";
+			method_ = cfg["Searchable keys"][i].asString();
+			cout << l(method_) << endl;
+		}
+		cout << "[0] " << l("quit") << endl;
+		cout << ">>> ";
+		cin >> method;
+		cin.get();
+		cout << endl;
+		switch (method) {
+		case 0: break;
+		default:
+			if (method < 0 || method > cfg["Searchable keys"].size()) break;
+			string keyname = cfg["Searchable keys"][method-1].asString();
+			string type = get_keytype(cfg["Datas"], keyname);
+			int counter = 0;
+			cout << l("manager.search.enter_key") << ": ";
+			// type sucks
+			if (type == "string") {
+				string dest;
+				cin >> dest;
+				for (int i = 0;i < data.size();++i) {
+					string key = data[i][keyname].asString();
+					if (key == dest) {
+						counter += 1;
+						disp_(data, cfg["Display keys"], i);
+					}
+				}
+			}
+			else if (type == "int") {
+				int dest;
+				cin >> dest;
+				cin.get();
+				for (int i = 0;i < data.size();++i) {
+					int key = data[i][keyname].asInt();
+					if (key == dest) {
+						counter += 1;
+						disp_(data, cfg["Display keys"], i);
+					}
+				}
+			}
+			else if (type == "double") {
+				double dest;
+				cin >> dest;
+				cin.get();
+				for (int i = 0;i < data.size();++i) {
+					double key = data[i][keyname].asDouble();
+					if (key == dest) {
+						counter += 1;
+						disp_(data, cfg["Display keys"], i);
+					}
+				}
+			}
 
+			if (!counter) {
+				cout << l("manager.search.notfound") << endl;
+				break;
+			}
+			else {
+				cout << l("manager.search.total1") << counter << l("manager.search.total2") << endl;
+			}
+			int choose = -1;
+			while (choose) {
+				cout << "[n] " << l("manager.search.showdetail") << endl;
+				cout << "[0] " << l("quit") << endl;
+				cout << ">>> ";
+				cin >> choose;
+				cin.get();
+				cout << endl;
+				switch (choose) {
+				case 0: break;
+				default:
+					if (choose < 0 || choose > data.size()) break;
+					for (int i = 0; i < cfg["Datas"].size(); ++i) {
+						cout << "- ";
+						string dataname = cfg["Datas"][i]["key"].asString();
+						cout << l(dataname) << ": " << data[choose - 1][dataname] << endl;
+					}
+				}
+			}
+		}
+	}
 }
 
 void Manager::display(){
+	read();
 	int page = 1;
 	int action = 1;
 	while (action) {
@@ -198,18 +290,22 @@ void disp(Value & data, Value & keys, int page, bool showIndex){
 
 	cout << "======== Page [" << page << " / " << m_page << "] ========" << endl;
 	for (int i = start; i < end; ++i) {
-		if (showIndex) {
-			cout << "[" << i + 1 << "] ";
-		}
-		for (int j = 0;j < keys.size();++j) {
-			string keyname = keys[j].asString();
-			// Whatever, asString is not bad.
-			cout << l(keyname) << ": " << data[i][keyname].asString() << " ";
-		}
-		cout << endl;
+		disp_(data, keys, i, showIndex);
 	}
 	
 	
+}
+
+void disp_(Value& data, Value& keys, int i, bool showIndex){
+	if (showIndex) {
+		cout << "[" << i + 1 << "] ";
+	}
+	for (int j = 0;j < keys.size();++j) {
+		string keyname = keys[j].asString();
+		// Whatever, asString is not bad.
+		cout << l(keyname) << ": " << data[i][keyname].asString() << " ";
+	}
+	cout << endl;
 }
 
 void page_navigate(Value & data, int page) {
@@ -222,6 +318,16 @@ void page_navigate(Value & data, int page) {
 	else {
 		cout << "[-1] " << l("nextpage") << " [-2] " << l("prevpage") << endl;
 	}
+}
+
+string get_keytype(Value& data, string& keyname) {
+	for (int i = 0;i < data.size();++i) {
+		if (data[i]["key"].asString() == keyname) {
+			return data[i]["type"].asString();
+		}
+	}
+	logger::error("Key " + keyname + " not found.");
+	return string();
 }
 
 // TODO: move to data.cpp to initialize
