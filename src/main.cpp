@@ -51,7 +51,6 @@ int main(){
             else {
                 manager = new Manager(m[select - 1]);
             }
-            system("cls");
             manager->panel();
             delete manager;
         }

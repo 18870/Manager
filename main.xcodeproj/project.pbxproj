@@ -10,6 +10,10 @@
 		63B3028526A302EA0026CED3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B3028326A302EA0026CED3 /* main.cpp */; };
 		63B3029A26A3BCA60026CED3 /* file.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B3029826A3BCA60026CED3 /* file.cpp */; };
 		63B302A026A3CAC00026CED3 /* jsoncpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B3029F26A3CAC00026CED3 /* jsoncpp.cpp */; };
+		63B302B026A5C19B0026CED3 /* lang.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B302AA26A5C19B0026CED3 /* lang.cpp */; };
+		63B302B126A5C19B0026CED3 /* manager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B302AB26A5C19B0026CED3 /* manager.cpp */; };
+		63B302B226A5C19B0026CED3 /* utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B302AC26A5C19B0026CED3 /* utils.cpp */; };
+		63B302B326A5C19B0026CED3 /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B302AF26A5C19B0026CED3 /* config.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,8 +35,15 @@
 		63B3029826A3BCA60026CED3 /* file.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = file.cpp; sourceTree = "<group>"; };
 		63B3029926A3BCA60026CED3 /* file.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = file.hpp; sourceTree = "<group>"; };
 		63B3029F26A3CAC00026CED3 /* jsoncpp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = jsoncpp.cpp; path = include/jsoncpp.cpp; sourceTree = SOURCE_ROOT; };
-		63B302A326A3CF590026CED3 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
-		63B302A526A3D4530026CED3 /* template.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = template.json; sourceTree = "<group>"; };
+		63B302A826A5C19B0026CED3 /* config.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = config.hpp; sourceTree = "<group>"; };
+		63B302A926A5C19B0026CED3 /* lang.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = lang.hpp; sourceTree = "<group>"; };
+		63B302AA26A5C19B0026CED3 /* lang.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = lang.cpp; sourceTree = "<group>"; };
+		63B302AB26A5C19B0026CED3 /* manager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = manager.cpp; sourceTree = "<group>"; };
+		63B302AC26A5C19B0026CED3 /* utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = utils.cpp; sourceTree = "<group>"; };
+		63B302AD26A5C19B0026CED3 /* utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = utils.hpp; sourceTree = "<group>"; };
+		63B302AE26A5C19B0026CED3 /* manager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = manager.hpp; sourceTree = "<group>"; };
+		63B302AF26A5C19B0026CED3 /* config.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = config.cpp; sourceTree = "<group>"; };
+		63B302B626A5C1B80026CED3 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +62,7 @@
 			children = (
 				63B3029426A30CF20026CED3 /* include */,
 				63B3028126A302EA0026CED3 /* src */,
-				63B302A226A3CF150026CED3 /* data */,
+				63B302B626A5C1B80026CED3 /* data */,
 				63A2B51A26A301F0009CD669 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,21 +78,20 @@
 		63B3028126A302EA0026CED3 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				63B302AF26A5C19B0026CED3 /* config.cpp */,
+				63B302A826A5C19B0026CED3 /* config.hpp */,
+				63B302AA26A5C19B0026CED3 /* lang.cpp */,
+				63B302A926A5C19B0026CED3 /* lang.hpp */,
+				63B302AB26A5C19B0026CED3 /* manager.cpp */,
+				63B302AE26A5C19B0026CED3 /* manager.hpp */,
+				63B302AC26A5C19B0026CED3 /* utils.cpp */,
+				63B302AD26A5C19B0026CED3 /* utils.hpp */,
 				63B3029F26A3CAC00026CED3 /* jsoncpp.cpp */,
 				63B3028326A302EA0026CED3 /* main.cpp */,
 				63B3029826A3BCA60026CED3 /* file.cpp */,
 				63B3029926A3BCA60026CED3 /* file.hpp */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		63B302A226A3CF150026CED3 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				63B302A326A3CF590026CED3 /* data.json */,
-				63B302A526A3D4530026CED3 /* template.json */,
-			);
-			path = data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,8 +151,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				63B302A026A3CAC00026CED3 /* jsoncpp.cpp in Sources */,
+				63B302B126A5C19B0026CED3 /* manager.cpp in Sources */,
+				63B302B326A5C19B0026CED3 /* config.cpp in Sources */,
 				63B3028526A302EA0026CED3 /* main.cpp in Sources */,
+				63B302B226A5C19B0026CED3 /* utils.cpp in Sources */,
 				63B3029A26A3BCA60026CED3 /* file.cpp in Sources */,
+				63B302B026A5C19B0026CED3 /* lang.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

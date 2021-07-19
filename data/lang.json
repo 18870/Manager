@@ -62,7 +62,16 @@
         "destinate": "Destination",
         "mile": "Mile",
         "deptime": "Departure time",
-        "arrtime": "Arrival time"
+        "arrtime": "Arrival time",
+        "bookmanager.borrow": "Borrow",
+        "bookmanager.borrow.msg": "[n] Borrow",
+        "bookmanager.borrow.confirm": "Are you sure to borrow this one?",
+        "bookmanager.borrow.time": "Enter borrow time",
+        "bookmanager.borrow.book_borrowed": "Book was borrowed, please choose another one",
+        "bookmanager.return": "Return",
+        "bookmanager.return.msg": "[n] Return",
+        "bookmanager.return.confirm": "Are you sure to return this one?",
+        "bookmanager.return.book_unborrowed": "Book was not borrowed, please choose another one"
     },
     "zh_cn" : 
     {
@@ -137,6 +146,5 @@
         "bookmanager.return.msg": "[n] 还书\n",
         "bookmanager.return.confirm": "是否确认还书",
         "bookmanager.return.book_unborrowed": "书没有被借走, 请重新选择"
-
     }
 }
