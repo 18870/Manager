@@ -10,28 +10,20 @@
 
 #include <iostream>
 #include "json/json.h"
-
+#include "utils.hpp"
+#include "file.hpp"
+#include "config.hpp"
 
 using namespace std;
 using Json::Value;
+using config::LANG;
+using config::CONFIG;
 
 
 namespace lang {
-	extern Value LANG;
 	void read();
 	string l(string& key);
 	string l(const char* key);
-}
-
-namespace logger {
-	void hr(const char* c);
-	void hr(const string& str);
-	void warn(const char* c);
-	void warn(const string& str);
-	void error(const char* c);
-	void error(const string& str);
-	void info(const char* c);
-	void info(const string& str);
 }
 
 #endif /* lang_hpp */

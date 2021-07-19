@@ -1,7 +1,7 @@
 {
     "Student Info":{
         "Datas":[
-            {"key": "ID", "type": "int"},
+            {"key": "ID", "type": "string"},
             {"key": "name", "type": "string"},
             {"key": "sex", "type": "string"},
             {"key": "birth", "type": "string"},
@@ -10,13 +10,6 @@
             {"key": "english", "type": "double"},
             {"key": "science", "type": "double"},
             {"key": "pe", "type": "double"}
-        ],
-        "Method":[
-            "Add",
-            "Del",
-            "Modify",
-            "Search",
-            "Display"
         ],
         "Searchable keys":[
             "name",
@@ -28,18 +21,108 @@
         ]
     },
     "Book":{
-
+        "Datas":[
+            {"key": "ISBN", "type": "string"},
+            {"key": "bookname", "type": "string"},
+            {"key": "author", "type": "string"},
+            {"key": "prize", "type": "double"},
+            {"key": "borrowed", "type": "bool"},
+            {"key": "borrow_date", "type": "string"}
+        ],
+        "Searchable keys":[
+            "ISBN",
+            "name",
+            "author"
+        ],
+        "Display keys": [
+            "name",
+            "author",
+            "borrowed"
+        ]
     },
     "Address Book":{
-
+        "Datas":[
+            {"key": "name", "type": "string"},
+            {"key": "workplace", "type": "string"},
+            {"key": "phone", "type": "string"},
+            {"key": "email", "type": "string"}
+        ],
+        "Searchable keys":[
+            "name",
+            "workplace",
+            "phone",
+            "email"
+        ],
+        "Display keys": [
+            "name",
+            "phone",
+            "email"
+        ]
     },
     "Staff":{
-
+        "Datas":[
+            {"key": "staffID", "type": "string"},
+            {"key": "name", "type": "string"},
+            {"key": "sex", "type": "string"},
+            {"key": "age", "type": "int"},
+            {"key": "educate", "type": "string"},
+            {"key": "wage", "type": "double"},
+            {"key": "address", "type": "string"},
+            {"key": "phone", "type": "string"}
+        ],
+        "Searchable keys":[
+            "ID",
+            "name",
+            "educate",
+            "phone"
+        ],
+        "Display keys": [
+            "name",
+            "phone"
+        ]
     },
     "Device":{
-
+        "Datas":[
+            {"key": "deviceID", "type": "string"},
+            {"key": "devicename", "type": "string"},
+            {"key": "lab", "type": "string"},
+            {"key": "prize", "type": "double"}
+        ],
+        "Searchable keys":[
+            "deviceID",
+            "devicename",
+            "lab"
+        ],
+        "Display keys": [
+            "devicename",
+            "lab",
+            "deviceID"
+        ]
     },
     "Flight":{
-
+        "Datas":[
+            {"key": "flightNO", "type": "string"},
+            {"key": "start", "type": "string"},
+            {"key": "destinate", "type": "string"},
+            {"key": "mile", "type": "double"},
+            {"key": "prize", "type": "double"},
+            {"key": "deptime", "type": "string"},
+            {"key": "arrtime", "type": "string"}
+        ],
+        "Searchable keys":[
+            "flightNO",
+            "start",
+            "destinate",
+            "deptime",
+            "arrtime"
+        ],
+        "Display keys": [
+            "flightNO",
+            "start",
+            "destinate",
+            "deptime",
+            "arrtime"
+            
+        ]
     }
 }

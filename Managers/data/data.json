@@ -1,12 +1,52 @@
 {
-    "Book" : 
+    "Address Book" : 
     [
-        {}
+        {
+            "email" : "i@lo-li.cc",
+            "name" : "18870",
+            "phone" : "13888886666",
+            "workplace" : "www"
+        }
+    ],
+    "Book" : [],
+    "Device" : 
+    [
+        {
+            "deviceID" : "1",
+            "devicename" : "device1",
+            "lab" : "lab1",
+            "prize" : 23333.0
+        }
+    ],
+    "Flight" : 
+    [
+        {
+            "arrtime" : "2021/8/1 17:05",
+            "deptime" : "2021/8/1 14:20",
+            "destinate" : "place2",
+            "flightNO" : "1234",
+            "mile" : 2345.0,
+            "prize" : 1234.0,
+            "start" : "place1"
+        }
+    ],
+    "Staff" : 
+    [
+        {
+            "address" : "some where",
+            "age" : 19,
+            "educate" : "high school",
+            "name" : "18870",
+            "phone" : "13888886666",
+            "sex" : "male",
+            "staffID" : "18870",
+            "wage" : 5678.0
+        }
     ],
     "Student Info" : 
     [
         {
-            "ID" : 2001630318,
+            "ID" : "2001630318",
             "birth" : "2002/06/24",
             "chinese" : 56.0,
             "english" : 127.0,
@@ -17,7 +57,7 @@
             "sex" : "male"
         },
         {
-            "ID" : 2001630319,
+            "ID" : "2001630319",
             "birth" : "2002/06/24",
             "chinese" : 56.0,
             "english" : 127.0,
@@ -28,7 +68,18 @@
             "sex" : "male"
         },
         {
-            "ID" : 2001630321,
+            "ID" : "2001630321",
+            "birth" : "2002/01/24",
+            "chinese" : 56.0,
+            "english" : 127.0,
+            "math" : 126.0,
+            "name" : "18873",
+            "pe" : 123.0,
+            "science" : 115.0,
+            "sex" : "male"
+        },
+        {
+            "ID" : "2001630320",
             "birth" : "2002/01/24",
             "chinese" : 56.0,
             "english" : 127.0,
@@ -39,7 +90,7 @@
             "sex" : "male"
         },
         {
-            "ID" : 2001630320,
+            "ID" : "2001630318",
             "birth" : "2002/01/24",
             "chinese" : 56.0,
             "english" : 127.0,
@@ -50,14 +101,14 @@
             "sex" : "male"
         },
         {
-            "ID" : 2001630318,
-            "birth" : "2002/01/24",
-            "chinese" : 56.0,
-            "english" : 127.0,
-            "math" : 126.0,
-            "name" : "18873",
+            "ID" : "123456",
+            "birth" : "2002/02/02",
+            "chinese" : 98.0,
+            "english" : 98.0,
+            "math" : 89.0,
+            "name" : "18465",
             "pe" : 98.0,
-            "science" : 115.0,
+            "science" : 89.0,
             "sex" : "male"
         }
     ]

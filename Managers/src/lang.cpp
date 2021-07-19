@@ -7,11 +7,9 @@
 
 #include "lang.hpp"
 #include "manager.hpp"
-#include "file.hpp"
+
 
 namespace lang {
-	using manager::CONFIG;
-	Value LANG;
 
 	void read(){
 		file::read("./data/lang.json", LANG);
@@ -43,29 +41,3 @@ namespace lang {
 	}
 }
 
-namespace logger {
-	void hr(const char* c){
-		cout << "<<<<<<<< " << c << " >>>>>>>>" << endl;
-	}
-	void hr(const string& str){
-		cout << "<<<<<<<< " << str << " >>>>>>>>" << endl;
-	}
-	void warn(const char* c) {
-		cout << "[Warning] " << c << endl;
-	}
-	void warn(const string& str) {
-		cout << "[Warning] " << str << endl;
-	}
-	void error(const char* c) {
-		cout << "[Error] " << c << endl;
-	}
-	void error(const string& str) {
-		cout << "[Error] " << str << endl;
-	}
-	void info(const char* c) {
-		cout << "[Info] " << c << endl;
-	}
-	void info(const string& str) {
-		cout << "[Info] " << str << endl;
-	}
-}
