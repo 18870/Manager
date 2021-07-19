@@ -31,11 +31,11 @@
         ],
         "Searchable keys":[
             "ISBN",
-            "name",
+            "bookname",
             "author"
         ],
         "Display keys": [
-            "name",
+            "bookname",
             "author",
             "borrowed",
             "borrow_date"

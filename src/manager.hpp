@@ -10,6 +10,7 @@
 #include <iostream>
 #include <string>
 #include <ctime>
+#include <stdlib.h>
 #include "json/json.h"
 #include "file.hpp"
 #include "utils.hpp"

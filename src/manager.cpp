@@ -71,6 +71,9 @@ namespace manager {
 		cout << endl;
 	}
 	void page_navigate(Value& data, int page) {
+		if ((data.size() - 1) / CONFIG["Display per page"].asInt() + 1 == 1) return;
+		if (data.size() == 0) return;
+
 		if (page == 1) {
 			cout << "[-1] " << l("nextpage") << endl;
 		}
@@ -331,6 +334,9 @@ namespace manager {
 		int page = 1;
 		int action = 1;
 		while (action) {
+			if (page < 1) page = 1;
+			if (page > (data.size() - 1) / CONFIG["Display per page"].asInt() + 1) page -= 1;
+
 			disp(data, cfg["Display keys"], page);
 			cout << "[0] " << l("quit") << endl;
 			page_navigate(data, page);
@@ -369,9 +375,10 @@ namespace manager {
 		//	}
 		//}
 
-		logger::hr(l(manager_name));
 		int select = -1;
 		while (select) {
+			system("cls");
+			logger::hr(l(manager_name));
 			cout << l("manager.panel");
 			cout << "[0] " << l("quit") << endl;
 			cout << ">>> ";
@@ -489,9 +496,10 @@ namespace manager {
 		}
 	}
 	void BookManager::panel() {
-		logger::hr(l(manager_name));
 		int select = -1;
 		while (select) {
+			system("cls");
+			logger::hr(l(manager_name));
 			cout << l("bookmanager.panel");
 			cout << "[0] " << l("quit") << endl;
 			cout << ">>> ";
