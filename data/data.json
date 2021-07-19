@@ -8,7 +8,45 @@
             "workplace" : "www"
         }
     ],
-    "Book" : [],
+    "Book" : 
+    [
+        {
+            "ISBN" : "165-456-12610-126",
+            "author" : "A_Pi",
+            "bookname" : "v",
+            "borrowed" : false,
+            "name" : null,
+            "prize" : -1.0
+        },
+        {
+            "ISBN" : "16",
+            "author" : "18870",
+            "bookname" : "n",
+            "borrowed" : false,
+            "prize" : 98.0
+        },
+        {
+            "ISBN" : "1",
+            "author" : "3",
+            "bookname" : "2",
+            "borrowed" : false,
+            "prize" : 4.0
+        },
+        {
+            "ISBN" : "3",
+            "author" : "5",
+            "bookname" : "4",
+            "borrowed" : false,
+            "prize" : 6.0
+        },
+        {
+            "ISBN" : "ads",
+            "author" : "dasd",
+            "bookname" : "fe",
+            "borrowed" : false,
+            "prize" : 159.0
+        }
+    ],
     "Device" : 
     [
         {

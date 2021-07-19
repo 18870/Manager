@@ -37,7 +37,8 @@
         "Display keys": [
             "name",
             "author",
-            "borrowed"
+            "borrowed",
+            "borrow_date"
         ]
     },
     "Address Book":{

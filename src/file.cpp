@@ -4,7 +4,7 @@
 //
 //  Created by 18870 on 2021/7/18.
 //
-
+#pragma warning(disable : 4996)
 #include "file.hpp"
 #include "lang.hpp"
 

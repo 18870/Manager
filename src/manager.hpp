@@ -9,15 +9,14 @@
 
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "json/json.h"
 #include "file.hpp"
 #include "utils.hpp"
 #include "config.hpp"
 #include "lang.hpp"
 
-using std::cin;
-using std::cout;
-using std::endl;
+using namespace std;
 using std::string;
 using Json::Value;
 using lang::l;
@@ -31,16 +30,17 @@ namespace manager {
 	void disp_(Value& data, Value& keys, int index, bool showIndex = true);
 	void page_navigate(Value& data, int page);
 	string get_keytype(Value& data, string& keyname);
+	void setting_panel();
 
 	class Manager {
+	protected:
 		void read();
 		void save();
-	protected:
 		string manager_name;
 		Value cfg;
 		Value data;
 	public:
-		Manager(const string);
+		Manager(const string&);
 		virtual ~Manager();
 		virtual void add();
 		virtual void del();
@@ -52,7 +52,7 @@ namespace manager {
 
 	class BookManager : public Manager {
 	public:
-		BookManager(const string name) :Manager(name) {};
+		BookManager(const string& name) :Manager(name) {};
 		virtual ~BookManager();
 		virtual void borrow();
 		virtual void return_book();

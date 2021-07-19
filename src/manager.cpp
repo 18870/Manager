@@ -12,7 +12,9 @@ namespace manager {
 			cout << l(name) << ": ";
 			char c[80] = "";
 			cin.getline(c, 81);
-			data[name] = c;
+			if (string(c) != "") {
+				data[name] = c;
+			}
 		}
 		else if (type == "int") {
 			cout << l(name) << ": ";
@@ -62,7 +64,9 @@ namespace manager {
 		for (int j = 0;j < keys.size();++j) {
 			string keyname = keys[j].asString();
 			// Whatever, asString is not bad.
-			cout << l(keyname) << ": " << data[i][keyname].asString() << " ";
+			if (!data[i][keyname].isNull()) {
+				cout << l(keyname) << ": " << data[i][keyname].asString() << " ";
+			}
 		}
 		cout << endl;
 	}
@@ -86,8 +90,39 @@ namespace manager {
 		logger::error("Key " + keyname + " not found.");
 		return string();
 	}
+	void setting_panel() {
+		logger::hr(l("setting"));
+		int select = -1;
+		while (select) {
+			cout << l("setting.msg");
+			cout << "[0] " << l("quit") << endl;
+			cout << ">>> ";
+			cin >> select;
+			cout << endl;
+			cin.get();
+			switch (select) {
+			case 1: {
+				int val;
+				cout << l("setting.lang") << ">>> ";
+				cin >> val;
+				string lang[] = { "zh_cn", "en" };
+				CONFIG["language"] = lang[val - 1];
+				break;
+			}
+			case 2: {
+				cout << l("manager.modify.newvalue") << ": ";
+				int i;
+				cin >> i;
+				cin.get();
+				CONFIG["Display per page"] = i;
+				break;
+			}
+			}
+			config::save_config();
+		}
+	}
 
-	Manager::Manager(const string name) {
+	Manager::Manager(const string& name) {
 		cfg = SYSTEM[name];
 		manager_name = name;
 		read();
@@ -363,14 +398,95 @@ namespace manager {
 		file::save("./data/data.json", DATA);
 	}
 
-
-
 	BookManager::~BookManager() {}
 	void BookManager::borrow() {
-
+		logger::hr(l("bookmanager.borrow"));
+		read();
+		int choose = -1;
+		while (choose) {
+			cout << l("bookmanager.borrow.msg");
+			cout << "[0] " << l("quit") << endl;
+			cout << ">>> ";
+			cin >> choose;
+			cin.get();
+			cout << endl;
+			switch (choose) {
+			case 0: break;
+			default:
+				if (data[choose - 1]["borrowed"].asBool() == false) {
+					for (int i = 0; i < cfg["Datas"].size(); ++i) {
+						cout << "- ";
+						string dataname = cfg["Datas"][i]["key"].asString();
+						cout << l(dataname) << ": " << data[choose - 1][dataname] << endl;
+					}
+					cout << l("bookmanager.borrow.confirm") << endl;
+					cout << " [0] " << l("false") << " [1] " << l("true") << ": ";
+					bool confirm = false;
+					cin >> confirm;
+					cin.get();
+					cout << endl;
+					if (confirm) {
+						data[choose - 1]["borrowed"] = true;
+						cout << l("bookmanager.borrow.time") << ": ";
+						char c[80] = "";
+						cin.getline(c, 81);
+						data[choose - 1]["borrow_date"] = c;
+						save();
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					disp_(data, cfg["Display keys"], choose - 1);
+					cout << l("bookmanager.borrow.book_borrowed") << endl;
+					break;
+				}
+			}
+		}
 	}
 	void BookManager::return_book() {
-
+		logger::hr(l("bookmanager.return"));
+		read();
+		int choose = -1;
+		while (choose) {
+			cout << l("bookmanager.return.msg");
+			cout << "[0] " << l("quit") << endl;
+			cout << ">>> ";
+			cin >> choose;
+			cin.get();
+			cout << endl;
+			switch (choose) {
+			case 0: break;
+			default:
+				if (data[choose - 1]["borrowed"].asBool() == true) {
+					for (int i = 0; i < cfg["Datas"].size(); ++i) {
+						cout << "- ";
+						string dataname = cfg["Datas"][i]["key"].asString();
+						cout << l(dataname) << ": " << data[choose - 1][dataname] << endl;
+					}
+					cout << l("bookmanager.return.confirm") << endl;
+					cout << " [0] " << l("false") << " [1] " << l("true") << ": ";
+					bool confirm = false;
+					cin >> confirm;
+					cin.get();
+					cout << endl;
+					if (confirm) {
+						data[choose - 1]["borrowed"] = false;
+						data[choose - 1].removeMember("borrow_date");
+						save();
+					}
+					else {
+						break;
+					}
+				}
+				else {
+					disp_(data, cfg["Display keys"], choose - 1);
+					cout << l("bookmanager.return.book_unborrowed") << endl;
+					break;
+				}
+			}
+		}
 	}
 	void BookManager::panel() {
 		logger::hr(l(manager_name));

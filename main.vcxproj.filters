@@ -30,6 +30,12 @@
     <ClCompile Include="src\lang.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\config.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\utils.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="data\data.json">
@@ -53,6 +59,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="src\lang.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\config.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="src\utils.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

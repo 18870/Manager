@@ -127,6 +127,16 @@
         "destinate": "目的地",
         "mile": "里程",
         "deptime": "出发时间",
-        "arrtime": "到达时间"
+        "arrtime": "到达时间",
+        "bookmanager.borrow": "借书",
+        "bookmanager.borrow.msg": "[n] 借书\n",
+        "bookmanager.borrow.confirm": "是否确认借书",
+        "bookmanager.borrow.time": "请输入借阅时间",
+        "bookmanager.borrow.book_borrowed": "此书已被借走, 请重新选择",
+        "bookmanager.return": "还书",
+        "bookmanager.return.msg": "[n] 还书\n",
+        "bookmanager.return.confirm": "是否确认还书",
+        "bookmanager.return.book_unborrowed": "书没有被借走, 请重新选择"
+
     }
 }
