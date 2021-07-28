@@ -13,13 +13,13 @@
 using Json::Value;
 
 namespace config {
-	extern Value DATA;
-	extern Value CONFIG;
-	extern Value SYSTEM;
-	extern Value LANG;
+    extern Value DATA;
+    extern Value CONFIG;
+    extern Value SYSTEM;
+    extern Value LANG;
 
-	void load_config();
-	void save_config();
+    void load_config();
+    void save_config();
 }
 
 

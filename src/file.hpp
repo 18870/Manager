@@ -14,10 +14,10 @@
 #include <assert.h>
 #include "json/json.h"
 
-namespace file{
+namespace file {
 
-int read(const std::string & filename, Json::Value & json);
-int save(const std::string & filename, Json::Value & json);
+    int read(const std::string & filename, Json::Value & json);
+    int save(const std::string & filename, Json::Value & json);
 
 }
 

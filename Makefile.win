@@ -1,0 +1,46 @@
+# Project: Manager
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = src/main.o include/jsoncpp.o src/config.o src/file.o src/lang.o src/manager.o src/utils.o
+LINKOBJ  = src/main.o include/jsoncpp.o src/config.o src/file.o src/lang.o src/manager.o src/utils.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib"
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"./include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++" -I"./include"
+BIN      = main.exe
+CXXFLAGS = $(CXXINCS) -std=c++11
+CFLAGS   = $(INCS) -std=c++11
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+src/main.o: src/main.cpp
+	$(CPP) -c src/main.cpp -o src/main.o $(CXXFLAGS)
+
+include/jsoncpp.o: include/jsoncpp.cpp
+	$(CPP) -c include/jsoncpp.cpp -o include/jsoncpp.o $(CXXFLAGS)
+
+src/config.o: src/config.cpp
+	$(CPP) -c src/config.cpp -o src/config.o $(CXXFLAGS)
+
+src/file.o: src/file.cpp
+	$(CPP) -c src/file.cpp -o src/file.o $(CXXFLAGS)
+
+src/lang.o: src/lang.cpp
+	$(CPP) -c src/lang.cpp -o src/lang.o $(CXXFLAGS)
+
+src/manager.o: src/manager.cpp
+	$(CPP) -c src/manager.cpp -o src/manager.o $(CXXFLAGS)
+
+src/utils.o: src/utils.cpp
+	$(CPP) -c src/utils.cpp -o src/utils.o $(CXXFLAGS)

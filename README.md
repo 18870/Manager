@@ -1,6 +1,11 @@
 # Manager
 A simple cli data manager written in c++.  
 
+# Compile
+**Need at least C++11.**
+## Dev-C++
+Add argument `-static-libgcc -std=c++11 -std=gnu++11` to complier option.
+
 # Generate new manager
 ```json
 "Student Info":{

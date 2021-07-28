@@ -44,7 +44,7 @@ int main(){
             manager::setting_panel();
             break;
         default:
-            if (select < 0 || select >6) break;
+            if (select < 0 || select > 6) break;
             if (select == 6) {
                 manager = new BookManager(m[select - 1]);
             }

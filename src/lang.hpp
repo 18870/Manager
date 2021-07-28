@@ -21,9 +21,9 @@ using config::CONFIG;
 
 
 namespace lang {
-	void read();
-	string l(string& key);
-	string l(const char* key);
+    void read();
+    string l(string& key);
+    string l(const char* key);
 }
 
 #endif /* lang_hpp */
