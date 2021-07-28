@@ -367,4 +367,5 @@ FodyWeavers.xsd
 
 ## Ignore Dev-C++ Files
 main.exe
+Manager.exe
 *.o
